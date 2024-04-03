@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid bg-success" id=container>
+        <div class="row">
+            <!-- Menu Side -->
+            <div class="col-9 bg-body" id="content">
+                <br>
+                <div class="slideshow" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <img src="image/Banner.png" alt="">
+                </div>
+                <ul class="nav nav-underline justify-content-around bg-light">
+                    <li class="nav-item active">
+                        <a class="nav-link" onclick="changeCategory('features')" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="changeCategory('promotion')" href="#">Promotion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="changeCategory('top-seller')" href="#">Top Seller</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="changeCategory('top-rated')" href="#">Top Rated</a>
+                        </lis>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="changeCategory('all')" href="#">All</a>
+                    </li>
+                </ul>
+                <div class="container" id="menu">
+                    <div class="row row-cols-3">
+                        <a class="col features" id="menu1" href="#" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal" onclick="changeMenuInfo('exampleModal','cheeseburger')">
+                            <div style="width: 100%; height: 100%;">
+                                <img src="image/Bacon Cheese Burger.jpg" alt="">
+                                <div class="info">
+                                    <div class="desc">Bacon Cheese Burger</div>
+                                    <div class="price">$200</div>
+                                </div>
+                                <button>GET</button>
+                            </div>
+                        </a>
+                        <div class="col features" id="menu2">
+                            <div style="width: 100%; height: 100%;">
+                                <img src="image/California burger.jpg" alt="">
+                                <div class="info">
+                                    <div class="desc">California Burger</div>
+                                    <div class="price">$200</div>
+                                </div>
+                                <button>GET</button>
+                            </div>
+                        </div>
+                        <div class="col features top-seller" id="menu3">
+                            <div style="width: 100%; height: 100%;">
+                                <img src="image/Cheese Burger.jpg" alt="">
+                                <div class="info">
+                                    <div class="desc">Cheese Burger</div>
+                                    <div class="price">$200</div>
+                                </div>
+                                <button>GET</button>
+                            </div>
+                        </div>
+                        <div class="col promotion" id="menu4">
+                            <div style="width: 100%; height: 100%;">
+                                <img src="image/Double Cheese Burger.jpeg" alt="">
+                                <div class="info">
+                                    <div class="desc">Double Cheese Burger</div>
+                                    <div class="price">$200</div>
+                                </div>
+                                <button>GET</button>
+                            </div>
+                        </div>
+                        <div class="col promotion" id="menu5">
+                            <div style="width: 100%; height: 100%;">
+                                <img src="image/Kimchi burger.jpg" alt="">
+                                <div class="info">
+                                    <div class="desc">Kimchi Burger</div>
+                                    <div class="price">$200</div>
+                                </div>
+                                <button>GET</button>
+                            </div>
+                        </div>
+                        <div class="col promotion top-rated" id="menu6">
+                            <div style="width: 100%; height: 100%;">
+                                <img src="image/Luther Burger.jpg" alt="">
+                                <div class="info">
+                                    <div class="desc">Luther Burger</div>
+                                    <div class="price">$200</div>
+                                </div>
+                                <button>GET</button>
+                            </div>
+                        </div>
+                        <div class="col top-seller top-rated" id="menu7">
+                            <div style="width: 100%; height: 100%;">
+                                <img src="image/Salmon burger.jpg" alt="">
+                                <div class="info">
+                                    <div class="desc">Salmon Burger</div>
+                                    <div class="price">$200</div>
+                                </div>
+                                <button>GET</button>
+                            </div>
+                        </div>
+                        <div class="col top-seller top-rated" id="menu8">
+                            <div style="width: 100%; height: 100%;">
+                                <img src="image/Veggie burger.jpg" alt="">
+                                <div class="info">
+                                    <div class="desc">Veggie Burger</div>
+                                    <div class="price">$200</div>
+                                </div>
+                                <button>GET</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Order Side -->
+            <div class="col-3 bg-light" id="orders">
+                <h3>My Orders</h3>
+                <div class="container" id="list-order">
+                    <div class="row bg-danger">1</div>
+                    <div class="row bg-info">2</div>
+                    <div class="row bg-success">3</div>
+                </div>
+                <div class="line"></div>
+                <div class="container" id="total">
+
+                </div>
+                <div class="line"></div>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary" type="button" onclick="sentData()">Check Out</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Beef, Pork -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Make Your Own Burger</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>Bread</h6>
+                    <div class="form-radio" id="bread">
+                        <input type="radio" class="btn-check" name="options-bread" id="bun" autocomplete="off" value="bun">
+                        <label class="btn" for="bun"><img src="image/bun.jpg" alt=""><p>Bun</p></label>
+                        <input type="radio" class="btn-check" name="options-bread" id="wholewheat" autocomplete="off" value="wholewheat">
+                        <label class="btn" for="wholewheat"><img src="image/whole wheat bun.jpg" alt=""><p>Wholewheat</p></label>
+                        <input type="radio" class="btn-check" name="options-bread" id="donut" autocomplete="off" value="donut">
+                        <label class="btn" for="donut"><img src="image/donut.jpg" alt=""><p>Donut</p></label>
+                    </div>
+                    <h6>Meat</h6>
+                    <div class="form-radio" id="meat">
+                        <input type="radio" class="btn-check" name="options-meat" id="beef" autocomplete="off" value="beef">
+                        <label class="btn" for="beef"><img src="image/beef.png" alt=""><p>Beef</p></label>
+                        <input type="radio" class="btn-check" name="options-meat" id="pork" autocomplete="off" value="pork">
+                        <label class="btn" for="pork"><img src="image/pork.png" alt=""><p>Pork</p></label>
+                        <input type="radio" class="btn-check" name="options-meat" id="salmon" autocomplete="off" value="salmon">
+                        <label class="btn" for="salmon"><img src="image/salmon.png" alt=""><p>Salmon</p></label>
+                        <input type="radio" class="btn-check" name="options-meat" id="plant-base" autocomplete="off" value="plant-base">
+                        <label class="btn" for="plant-base"><img src="image/plant-base meat.png" alt=""><p>Plant-base Meat</p></label>
+                    </div>
+                    <h6>Topping</h6>
+                    <div class="form-checkbox" id="topping">
+                        <input type="checkbox" class="btn-check" name="options-topping" id="bacon" autocomplete="off" value="bacon">
+                        <label class="btn" for="bacon"><img src="image/bacon.jpg" alt=""><p>Bacon</p></label>
+                        <input type="checkbox" class="btn-check" name="options-topping" id="cheese" autocomplete="off" value="cheese">
+                        <label class="btn" for="cheese"><img src="image/cheese.jpg" alt=""><p>Cheese</p></label>
+                        <input type="checkbox" class="btn-check" name="options-topping" id="doublecheese" autocomplete="off" value="doublecheese">
+                        <label class="btn" for="doublecheese"><img src="image/cheese.jpg" alt=""><p>Double Cheese</p></label>
+                        <input type="checkbox" class="btn-check" name="options-topping" id="kimchi" autocomplete="off" value="kimchi">
+                        <label class="btn" for="kimchi"><img src="image/kimchi.jpg" alt=""><p>Kimchi</p></label>
+                    </div>
+                    <h6>Vegetable</h6>
+                    <div class="form-checkbox" id="vegetable">
+                        <input type="checkbox" class="btn-check" name="options-vegetable" id="lettuce" autocomplete="off" value="lettuce">
+                        <label class="btn" for="lettuce"><img src="image/lettuce.jpg" alt=""><p>Lettuce</p></label>
+                        <input type="checkbox" class="btn-check" name="options-vegetable" id="tomato" autocomplete="off" value="tomato">
+                        <label class="btn" for="tomato"><img src="image/tomato.jpg" alt=""><p>Tomato</p></label>
+                        <input type="checkbox" class="btn-check" name="options-vegetable" id="onion" autocomplete="off" value="onion">
+                        <label class="btn" for="onion"><img src="image/onion.jpg" alt=""><p>Onion</p></label>
+                        <input type="checkbox" class="btn-check" name="options-vegetable" id="avocado" autocomplete="off" value="avocado">
+                        <label class="btn" for="avocado"><img src="image/avocado.jpg" alt=""><p>Avocado</p></label>
+                        <input type="checkbox" class="btn-check" name="options-vegetable" id="sprouts" autocomplete="off" value="sprouts">
+                        <label class="btn" for="sprouts"><img src="image/sprouts.jpg" alt=""><p>Sprouts</p></label>
+                        <input type="checkbox" class="btn-check" name="options-vegetable" id="pickle-cucumbers" autocomplete="off" value="pickle-cucumbers">
+                        <label class="btn" for="pickle-cucumbers"><img src="image/pickle cucumbers.png" alt=""><p>Pickle Cucumbers</p></label>
+                    </div>
+                    <h6>Sauce</h6>
+                    <div class="form-ratio" id="sauce">
+                        <input type="checkbox" class="btn-check" name="options-sauce" id="ketchup" autocomplete="off" value="ketchup">
+                        <label class="btn" for="ketchup"><img src="image/ketchup.jpg" alt=""><p>Ketchup</p></label>
+                        <input type="checkbox" class="btn-check" name="options-sauce" id="mustard" autocomplete="off" value="mustard">
+                        <label class="btn" for="mustard"><img src="image/mustard.avif" alt=""><p>Mustard</p></label>
+                        <input type="checkbox" class="btn-check" name="options-sauce" id="mayonnaise" autocomplete="off" value="mayonnaise">
+                        <label class="btn" for="mayonnaise"><img src="image/mayonnaise.jpg" alt=""><p>Mayonnaise</p></label>
+                    </div>
+                </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button id="order" onclick="" class="btn btn-primary">GET</button>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
